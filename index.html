@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ATS Resume Studio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>ATS Resume Studio</h1>
+        <p>Create ATS-friendly resumes with an Overleaf-style live editor.</p>
+      </div>
+      <div class="actions">
+        <select id="templateSelect" aria-label="Resume template">
+          <option value="software">Software Engineer Template</option>
+          <option value="data">Data Analyst Template</option>
+          <option value="product">Product Manager Template</option>
+        </select>
+        <button id="loadSampleBtn" class="secondary">Load Template</button>
+        <button id="downloadBtn">Download HTML</button>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <section class="panel editor-panel">
+        <div class="panel-title">Editor (Markdown-style)</div>
+        <textarea id="resumeInput" spellcheck="false"></textarea>
+      </section>
+
+      <section class="panel preview-panel">
+        <div class="panel-title">Live Resume Preview</div>
+        <article id="resumePreview" class="resume"></article>
+      </section>
+    </main>
+
+    <section class="analysis-area">
+      <div class="analysis-card">
+        <h2>Job Description Analyzer</h2>
+        <label for="jobDescription">Paste target job description:</label>
+        <textarea id="jobDescription" rows="8" placeholder="Paste job description here to compare keyword alignment..."></textarea>
+      </div>
+
+      <div class="analysis-card">
+        <h2>ATS Score</h2>
+        <div id="scoreBadge" class="score-badge">0</div>
+        <ul id="atsBreakdown" class="ats-breakdown"></ul>
+      </div>
+
+      <div class="analysis-card">
+        <h2>Keyword Match</h2>
+        <p><strong>Matched keywords:</strong> <span id="matchedKeywords">None</span></p>
+        <p><strong>Missing keywords:</strong> <span id="missingKeywords">None</span></p>
+      </div>
+
+      <div class="analysis-card next-steps-card full-width">
+        <h2>Next Steps</h2>
+        <ol id="nextStepsList" class="next-steps-list"></ol>
+        <div class="next-actions">
+          <button id="injectKeywordsBtn" class="secondary">Add Missing Keywords to Skills</button>
+          <button id="printBtn">Print / Save as PDF</button>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

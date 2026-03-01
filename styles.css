@@ -1,0 +1,206 @@
+:root {
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --line: #d8e0ea;
+  --text: #172334;
+  --muted: #5d6d84;
+  --accent: #2f6fed;
+  --good: #1f9d58;
+  --warn: #d97706;
+  --bad: #dc2626;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.topbar {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--card);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.topbar p {
+  margin: 0.3rem 0 0;
+  color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+select,
+button {
+  border: 0;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.55rem 0.95rem;
+  border-radius: 0.45rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+select {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--text);
+}
+
+button.secondary {
+  background: #44536a;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+}
+
+.panel {
+  min-height: 65vh;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-title {
+  background: #eef3fa;
+  border-bottom: 1px solid var(--line);
+  font-weight: 700;
+  padding: 0.7rem 0.9rem;
+}
+
+#resumeInput {
+  border: 0;
+  resize: none;
+  width: 100%;
+  flex: 1;
+  padding: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.resume {
+  background: #fff;
+  margin: 1rem;
+  border: 1px solid var(--line);
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  min-height: 300px;
+  box-shadow: 0 2px 6px rgba(19, 39, 62, 0.06);
+}
+
+.resume h1,
+.resume h2,
+.resume h3 {
+  margin: 0.45rem 0;
+}
+
+.resume p,
+.resume li {
+  margin: 0.25rem 0;
+  line-height: 1.4;
+}
+
+.analysis-area {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 0 1.5rem 1.5rem;
+}
+
+.analysis-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  padding: 1rem;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.analysis-card h2 {
+  margin-top: 0;
+  font-size: 1.05rem;
+}
+
+#jobDescription {
+  width: 100%;
+  margin-top: 0.4rem;
+  border: 1px solid var(--line);
+  border-radius: 0.45rem;
+  padding: 0.65rem;
+  font-size: 0.92rem;
+  resize: vertical;
+}
+
+.score-badge {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: 0.2rem 0 1rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white;
+  background: var(--bad);
+}
+
+.ats-breakdown {
+  padding-left: 1rem;
+  margin: 0;
+}
+
+.next-steps-list {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.next-steps-list li {
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.next-actions {
+  margin-top: 0.8rem;
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1100px) {
+  .workspace,
+  .analysis-area {
+    grid-template-columns: 1fr;
+  }
+
+  .panel {
+    min-height: 45vh;
+  }
+}
